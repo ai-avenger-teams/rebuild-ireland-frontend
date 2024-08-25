@@ -36,12 +36,11 @@ function App() {
             <div className="rounded bg-blue-500 w-8 aspect-square p-1.5">
               <h2 className="font-semibold text-white flex gap-2 text-2xl items-center">
                 <FaUser className="text-white" />
-                User
               </h2>
             </div>
             <p className="mx-2 p-2 rounded bg-gray-200 leading-4 text-sm">
               Hi there 👋
-              <br />I need help
+              <br />I need help!
             </p>
           </div>
         </div>
