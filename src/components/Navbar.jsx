@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Navbar() {
     return (
         <nav>
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="container mx-auto flex justify-between items-center pb-3">
                 <NavLink
                     to="/"
                     className={({ isActive }) => `text-lg font-semibold ${isActive ? 'text-green-700' : 'text-black'}`}
