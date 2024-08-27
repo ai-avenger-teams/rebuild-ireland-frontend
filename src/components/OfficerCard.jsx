@@ -1,5 +1,3 @@
-import React from "react";
-
 function OfficerCard({ officer }) {
     return (
         <div className="bg-primarylight w-80 max-w-xs rounded overflow-hidden shadow mx-auto p-3 m-3">

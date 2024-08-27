@@ -1,4 +1,3 @@
-import React from "react";
 import OfficerCard from '../components/OfficerCard';
 
 const officers = [
@@ -223,8 +222,8 @@ const officers = [
 
 function Officers() {
     return (
-        <div class="mx-auto py-3">
-            <h1 class="text-3xl py-3">Vacant property officers</h1>
+        <div className="mx-auto py-3">
+            <h1 className="text-3xl py-3">Vacant property officers</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-3">
                 {officers.map((officer, index) => (
                     <OfficerCard key={index} officer={officer} />

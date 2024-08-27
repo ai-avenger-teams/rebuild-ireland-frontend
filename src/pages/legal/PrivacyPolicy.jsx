@@ -1,5 +1,3 @@
-import React from "react";
-
 function PrivacyPolicy() {
     return (
         <div className='m-4'>

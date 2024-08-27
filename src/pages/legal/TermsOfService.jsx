@@ -1,5 +1,3 @@
-import React from "react";
-
 function TermsOfService() {
     return (
         <div className='m-4'>
