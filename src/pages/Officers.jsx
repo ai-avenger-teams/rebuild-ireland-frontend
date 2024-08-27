@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import OfficerCard from '../components/OfficerCard';
 
 const officers = [
@@ -222,14 +223,21 @@ const officers = [
 
 function Officers() {
     return (
-        <div className="mx-auto py-3">
-            <h1 className="text-3xl py-3">Vacant property officers</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-3">
-                {officers.map((officer, index) => (
-                    <OfficerCard key={index} officer={officer} />
-                ))}
+        <>
+            <Helmet>
+                <title>Vacant Property Officers</title>
+                <meta name="description" content="Connect with local Vacant Property Officers across Ireland through ReBuild Ireland. Find contact information for officers in your county who can assist with property renovation, grants, and compliance." />
+                <meta name="keywords" content="Vacant Property Officers Ireland, ReBuild Ireland, property renovation support, local property officers, Ireland property contacts, property compliance Ireland, renovation grants, derelict property assistance, county property officers, property management Ireland" />
+            </Helmet>
+            <div className="mx-auto py-3">
+                <h1 className="text-customGreen font-semibold text-3xl py-3">Vacant Property Officers</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-3">
+                    {officers.map((officer, index) => (
+                        <OfficerCard key={index} officer={officer} />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

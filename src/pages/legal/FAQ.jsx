@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet-async';
 
 const FAQPage = () => {
     const faqs = [
@@ -37,22 +38,29 @@ const FAQPage = () => {
     ];
 
     return (
-        <div className="container justify-content-center text-center mx-auto my-3">
-            <h1 className="text-customGreen font-semibold text-3xl py-3">Frequently Asked Questions</h1>
-            <div className="mx-auto my-3 flex flex-col">
-                <p className="p-3">
-                    Welcome to our FAQ section! Here you will find answers to the most commonly asked questions about our services. We aim to provide clear and concise information to help you better understand our offerings and resolve any queries you may have. If you need further assistance, please do not hesitate to contact us directly.
-                </p>
-                <div className="px-2">
-                    {faqs.map((faq, index) => (
-                        <div key={index} className="w-full max-w-4xl mx-auto my-4 p-4 border rounded-lg shadow bg-primarylight text-start">
-                            <h2 className="text-customGreen font-semibold text-lg pb-2">{faq.question}</h2>
-                            <p>{faq.answer}</p>
-                        </div>
-                    ))}
+        <>
+            <Helmet>
+                <title>FAQ Page</title>
+                <meta name="description" content="Find answers to frequently asked questions about ReBuild Ireland, including how our AI-driven platform helps with derelict and vacant property renovation in Ireland." />
+                <meta name="keywords" content="ReBuild Ireland FAQ, frequently asked questions, property renovation help, AI property platform, Ireland real estate support, renovation guidance, home renovation questions, property compliance FAQ" />
+            </Helmet>
+            <div className="container justify-content-center text-center mx-auto my-3">
+                <h1 className="text-customGreen font-semibold text-3xl py-3">Frequently Asked Questions</h1>
+                <div className="w-full max-w-5xl mx-auto my-3 flex flex-col">
+                    <p className="p-3">
+                        Welcome to our FAQ section! Here you will find answers to the most commonly asked questions about our services. We aim to provide clear and concise information to help you better understand our offerings and resolve any queries you may have. If you need further assistance, please do not hesitate to contact us directly.
+                    </p>
+                    <div className="px-2">
+                        {faqs.map((faq, index) => (
+                            <div key={index} className="w-full max-w-4xl mx-auto my-4 p-4 border rounded-lg shadow bg-primarylight text-start">
+                                <h2 className="text-customGreen font-semibold text-lg pb-2">{faq.question}</h2>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
