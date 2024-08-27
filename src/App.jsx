@@ -11,6 +11,7 @@ import FAQPage from "./pages/legal/FAQ";
 import ChatRoom from "./pages/ChatRoom"
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsOfService from "./pages/legal/TermsOfService";
+import Members from "./pages/TeamMemberPage";
 import Error403 from "./pages/errors/Error403";
 import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/officers" element={<Officers />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/teamPage" element={<Members />} />
               <Route path="/ChatRoom" element={<ChatRoom />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
