@@ -8,7 +8,11 @@ main {
   font-family: "Roboto Serif", serif;
 }
 
-h1, h2, nav, footer {
+h1,
+h2,
+nav,
+footer,
+.brandName {
   font-family: "Marcellus", serif;
 }
 
