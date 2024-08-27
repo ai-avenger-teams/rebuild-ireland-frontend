@@ -18,14 +18,14 @@ function ChatInputBox({ addMessage }) {
 	return (
 		<div id="chatInputBox" className="w-full">
 			<input
-				className="p-2 rounded-lg w-full"
-				placeholder="Enter your message to buildie the chatbot."
+				className="p-2 rounded-lg shadow bg-primarylight w-full"
+				placeholder="Enter your message to Buildie the chatbot."
 				onChange={updateMessage}
 				value={userMessage}
 			/>
 			<button 
 				onClick={handleSendMessage} 
-				className="rounded-lg relative float-right bg-green-300 p-1"
+				className="rounded-lg shadow relative float-right bg-customLightGreen hover:bg-customGreen text-primarylight mt-2 px-2 py-1"
 				aria-label="Submit message button"	
 			>
 				Submit
