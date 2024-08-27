@@ -23,6 +23,12 @@ function Navbar() {
                 >
                     Contact Us
                 </NavLink>
+                <NavLink
+                    to="/ChatRoom"
+                    className={({ isActive }) => `${isActive ? 'text-customGreen' : 'text-black'} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
+                >
+                    Contact Buildie
+                </NavLink>
             </div>
         </nav>
     );
