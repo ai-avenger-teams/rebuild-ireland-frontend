@@ -9,6 +9,7 @@ export default {
         secondary: '#ede8e1',
         customGreen: '#3b4a20',
         customLightGreen: '#4c602a',
+        veryLightGreen: '#c9cfbf',
       },
     },
   },

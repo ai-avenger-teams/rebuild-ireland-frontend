@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
@@ -25,7 +24,7 @@ function Navbar() {
                 </NavLink>
                 <NavLink
                     to="/ChatRoom"
-                    className={({ isActive }) => `${isActive ? 'text-customGreen' : 'text-black'} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
+                    className={({ isActive }) => `${isActive ? 'text-customGreen' : 'text-black'} bg-customLightGreen hover:bg-customGreen text-primarylight font-bold mr-2 py-2 px-3 rounded-lg shadow`}
                 >
                     Contact Buildie
                 </NavLink>

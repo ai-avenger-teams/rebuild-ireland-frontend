@@ -4,7 +4,7 @@ function ChatBubble(prop) {
 
 	return(
 		<div 
-			className="p-2 m-2 bg-blue-100 rounded-lg" 
+			className="p-2 m-2 bg-veryLightGreen rounded-lg shadow" 
 			id={"chatbubble" + prop.index}
 		>
 			{prop.message}
