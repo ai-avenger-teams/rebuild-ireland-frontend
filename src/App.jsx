@@ -8,6 +8,8 @@ import Contact from './pages/ContactPage';
 import Footer from './components/Footer';
 import FAQPage from "./components/legal/FAQ";
 import ChatRoom from "./pages/ChatRoom"
+import PrivacyPolicy from "./components/legal/PrivacyPolicy";
+import TermsOfService from "./components/legal/TermsOfService";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/officers" element={<Officers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/ChatRoom" element={<ChatRoom />} />
+            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/termsOfService" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />
