@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from 'react-helmet-async';
 import ChatInputBox from "../components/ChatInputBox";
 import ChatBubble from "../components/ChatBubble";
+import ChatbotGreeting from '../components/ChatbotGreeting';
 
 // This is a simple component for rendering each chat bubble
 function ChatRoom() {
@@ -30,6 +31,7 @@ function ChatRoom() {
 					{/* Pass the addMessageToLog function to ChatInputBox */}
 					<ChatInputBox addMessage={addMessageToLog} />
 				</div>
+				<ChatbotGreeting />
 			</section>
 		</>
 	);
