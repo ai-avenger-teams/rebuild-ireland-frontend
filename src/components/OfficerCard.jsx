@@ -1,7 +1,7 @@
 function OfficerCard({ officer }) {
     return (
-        <div className="bg-primarylight w-80 max-w-xs rounded overflow-hidden shadow mx-auto p-3 m-3">
-            <img className="w-full h-48 object-cover" src={officer.photo} alt={officer.name} />
+        <div className="bg-primarylight w-80 max-w-xs rounded-lg overflow-hidden shadow-lg mx-auto p-3 m-3">
+            <img className="mx-auto w-40 h-50 object-cover rounded-lg" src={officer.photo} alt={officer.name} />
             <div>
                 <h2 className="font-semibold uppercase m-2">{officer.name}</h2>
                 <p className="text-gray-700 text-base mb-1">{officer.county}</p>

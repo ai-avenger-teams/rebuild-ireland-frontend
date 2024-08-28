@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 function Navbar() {
@@ -13,14 +14,12 @@ function Navbar() {
         <nav className="bg-secondary">
             <div className="container mx-auto flex justify-between items-center my-3 p-2">
                 {/* Logo and Company Name */}
-                <div className="flex items-center">
-                    <img
-                        src="../src/assets/logoBrown.png"
-                        alt="Company Logo"
-                        className="h-12 w-12 mr-2"
-                    />
-                    <span className="brandName text-3xl font-semibold text-customGreen pt-2">ReBuild Ireland</span>
-                </div>
+                <Link to="/" className="flex items-center">
+                    <img src="../src/assets/logoBrown.png" alt="ReBuild Ireland Logo" className="h-8 w-auto mr-2" />
+                    <span className="text-2xl font-semibold text-customGreen hover:text-customLightGreen pt-2">
+                        ReBuild Ireland
+                    </span>
+                </Link>
 
                 {/* Desktop Navigation Links */}
                 <div className="hidden md:flex space-x-6">
