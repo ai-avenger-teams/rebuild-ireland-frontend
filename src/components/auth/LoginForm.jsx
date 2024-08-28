@@ -8,6 +8,7 @@ import { useAuth } from "../../context/AuthContext";
 import { AxiosError } from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setBearerToken } from "../../config/axios";
 
 const LoginForm = () => {
   const {
@@ -30,7 +31,9 @@ const LoginForm = () => {
 
   async function handleLogin(data) {
     try {
-      await login(data);
+      const response = await login(data);
+      setBearerToken(response.data.access);
+      localStorage.setItem("token", response.data.access);
       setLoginSuccess("Welcome back!");
       setIsAuthenticated(true);
       setTimeout(() => {
