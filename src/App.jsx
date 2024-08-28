@@ -1,20 +1,22 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Officers from './pages/Officers';
-import Contact from './pages/ContactPage';
-import Footer from './components/Footer';
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Officers from "./pages/Officers";
+import Contact from "./pages/ContactPage";
+import Footer from "./components/Footer";
 import FAQPage from "./pages/legal/FAQ";
-import ChatRoom from "./pages/ChatRoom"
+import ChatRoom from "./pages/ChatRoom";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsOfService from "./pages/legal/TermsOfService";
 import Members from "./pages/TeamMemberPage";
 import Error403 from "./pages/errors/Error403";
 import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
+import PrivateRoute from "./routes/PrivateRoutes";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="/officers" element={<Officers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/teamPage" element={<Members />} />
