@@ -1,4 +1,4 @@
-"use client";
+// Code to provide the react-query client to the app, this will help us with fetching api states/cache etc
 
 import {
   QueryCache,
