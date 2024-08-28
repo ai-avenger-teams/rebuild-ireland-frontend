@@ -50,7 +50,7 @@ function Members() {
             </Helmet>
             <div className="mx-auto py-3">
                 <h1 className="text-customGreen font-semibold text-3xl py-3">ReBuild Ireland Team</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {members.map((member, index) => (
                         <TeamMemberCard key={index} member={member} />
                     ))}
