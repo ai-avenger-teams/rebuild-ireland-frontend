@@ -16,6 +16,10 @@ footer,
   font-family: "Marcellus", serif;
 }
 
+body {
+  color: #353024;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
