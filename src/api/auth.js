@@ -115,10 +115,12 @@ export const createUserDocumentFromGoogleAuth = async (userAuth) => {
 
   const userDocRef = doc(firebaseDB, "users", userAuth.uid);
 
+  const lol = await getAllUsers();
+  console.log(lol);
+
   const userSnapShot = await getDoc(userDocRef);
 
   console.log(userSnapShot);
-  console.log(userDocRef);
 
   if (!userSnapShot.exists()) {
     const { email, displayName, name } = userAuth;
@@ -152,5 +154,20 @@ export const signInWithGoogle = async () => {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorCode + errorMessage);
+  }
+};
+
+const getAllUsers = async () => {
+  try {
+    const usersCollectionRef = collection(firebaseDB, "users");
+    const usersSnapshot = await getDocs(usersCollectionRef);
+    console.log(usersSnapshot);
+
+    const usersList = usersSnapshot.docs.map((doc) => doc.data());
+
+    console.log("All Users:", usersList);
+    return usersList;
+  } catch (error) {
+    console.error("Error getting users:", error);
   }
 };
