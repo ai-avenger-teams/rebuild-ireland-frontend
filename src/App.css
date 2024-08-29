@@ -26,19 +26,45 @@ body {
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Page container with background image */
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/src/assets/house3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Content container to keep the text readable */
+.content-container {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Vision and Mission Containers */
+.vision-mission-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.vision-container,
+.mission-container {
+  width: 48%; /* Side-by-side placement */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vision-mission-section {
+      flex-direction: column;
+      align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .vision-container,
+  .mission-container {
+      width: 100%;
+      margin-bottom: 20px;
   }
 }
 
