@@ -17,6 +17,7 @@ import Error500 from "./pages/errors/Error500";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
+  console.log(import.meta.env.VITE_DB_PASSWORD);
   return (
     <HelmetProvider>
       <div className="flex flex-col min-h-screen">
