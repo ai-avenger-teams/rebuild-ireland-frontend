@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
+  onAuthStateChanged,
   signInWithPopup,
 } from "firebase/auth";
 import {
@@ -110,13 +111,9 @@ async function createUserDocumentFromAuth(userAuth, userName) {
 }
 
 export const createUserDocumentFromGoogleAuth = async (userAuth) => {
-  console.log(userAuth);
   if (!userAuth) return;
 
   const userDocRef = doc(firebaseDB, "users", userAuth.uid);
-
-  const lol = await getAllUsers();
-  console.log(lol);
 
   const userSnapShot = await getDoc(userDocRef);
 
@@ -131,6 +128,8 @@ export const createUserDocumentFromGoogleAuth = async (userAuth) => {
       name: displayName || name,
       userName: displayName,
       promptHistory: [],
+      responseHistory: [],
+      photoURL: userAuth.photoURL,
     };
 
     try {
@@ -155,7 +154,20 @@ export const signInWithGoogle = async () => {
   }
 };
 
-const getAllUsers = async () => {
+onAuthStateChanged(firebaseAuth, (user) => {
+  if (user) {
+    // User is signed in
+    const uid = user.uid;
+    console.log("User ID:", uid);
+
+    // Now you can use this UID to get user data from Firestore
+  } else {
+    // No user is signed in
+    console.log("No user is signed in.");
+  }
+});
+
+export const getAllUsers = async () => {
   try {
     const usersCollectionRef = collection(firebaseDB, "users");
     const usersSnapshot = await getDocs(usersCollectionRef);

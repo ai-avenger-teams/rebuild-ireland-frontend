@@ -1,10 +1,51 @@
 import { Helmet } from "react-helmet-async";
-import ChatInputBox from "../components/ChatInputBox";
 import ChatbotGreeting from "../components/ChatbotGreeting";
+import { useEffect } from "react";
+import { firebaseAuth, firebaseDB } from "../config/firebase";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import UserPromptList from "../components/UserPromptList";
 
 // This is a simple component for rendering each chat bubble
 function ChatRoom() {
   // Function to add a new message to the chat log
+
+  console.log(firebaseAuth.currentUser);
+  const handleUserInput = async (event) => {
+    const user = firebaseAuth.currentUser;
+    if (user) {
+      // Add user prompt to the prompt history
+
+      const userPrompt = event.detail.input;
+
+      // Update Firestore with the prompt history
+      const userDocRef = doc(firebaseDB, "users", user.uid);
+      await updateDoc(userDocRef, {
+        promptHistory: arrayUnion(userPrompt),
+      });
+    }
+  };
+
+  function handleReceivedMessage(event) {
+    // When bot working add logic to store responses
+    event.detail.data.messages = event.detail.data.messages.filter(
+      (message) => {
+        return message.type === "text";
+      }
+    );
+  }
+
+  useEffect(() => {
+    // Here we add an event listener to the chatbot user input
+    window.addEventListener("df-user-input-entered", handleUserInput);
+
+    // Here we add an event listener to the chatbot response
+    window.addEventListener("df-response-received", handleReceivedMessage);
+
+    return () => {
+      window.removeEventListener("df-user-input-entered", handleUserInput);
+      window.addEventListener("df-response-received", handleReceivedMessage);
+    };
+  }, []);
 
   return (
     <>
@@ -19,6 +60,8 @@ function ChatRoom() {
           content="ReBuild Ireland AI chat, Buildie chatbot, property renovation advice, AI property assistant, Irish real estate chat, property management support, AI-driven property guidance, home renovation tips, property investment Ireland, interactive property help"
         />
       </Helmet>
+
+      <UserPromptList />
       <section className="w-4/5 relative h-screen m-auto flex flex-col justify-between gap-y-8">
         <df-messenger
           // oauth-client-id="INSERT_OAUTH_CLIENT_ID"
