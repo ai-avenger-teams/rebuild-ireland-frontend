@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import AuthDropdown from "./AuthDropDown";
+import AuthDropdown from "../layout/AuthDropdown";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,8 +31,7 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen px-3 pt-2`
             }
           >
@@ -41,8 +40,7 @@ function Navbar() {
           <NavLink
             to="/officers"
             className={({ isActive }) =>
-              `text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen pt-2`
             }
           >
@@ -51,8 +49,7 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen pt-2`
             }
           >
@@ -61,8 +58,7 @@ function Navbar() {
           <NavLink
             to="/ChatRoom"
             className={({ isActive }) =>
-              `${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `${isActive ? "text-customLightGreen" : "text-customBrown"
               } bg-customLightGreen hover:bg-customGreen text-primarylight font-bold py-2 px-3 rounded-lg shadow`
             }
           >
@@ -88,12 +84,11 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-secondary px-4 py-3 space-y-2">
+        <div className="md:hidden flex flex-col items-center bg-secondary px-4 py-3 space-y-4">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `block text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `block text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen`
             }
             onClick={toggleMobileMenu}
@@ -103,8 +98,7 @@ function Navbar() {
           <NavLink
             to="/officers"
             className={({ isActive }) =>
-              `block text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `block text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen`
             }
             onClick={toggleMobileMenu}
@@ -114,8 +108,7 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `block text-lg font-semibold ${
-                isActive ? "text-customGreen" : "text-customBrown"
+              `block text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
               } hover:text-customLightGreen`
             }
             onClick={toggleMobileMenu}
@@ -123,11 +116,30 @@ function Navbar() {
             Contact Us
           </NavLink>
           <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `block text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
+              } hover:text-customLightGreen`
+            }
+            onClick={toggleMobileMenu}
+          >
+            Login
+          </NavLink>
+          <NavLink
+            to="/register"
+            className={({ isActive }) =>
+              `block text-lg font-semibold ${isActive ? "text-customLightGreen" : "text-customBrown"
+              } hover:text-customLightGreen`
+            }
+            onClick={toggleMobileMenu}
+          >
+            Register
+          </NavLink>
+          <NavLink
             to="/ChatRoom"
             className={({ isActive }) =>
-              `${
-                isActive ? "text-customGreen" : "text-customBrown"
-              } block mx-auto w-40 bg-customLightGreen hover:bg-customGreen text-primarylight font-bold py-2 rounded-lg shadow-lg`
+              `${isActive ? "text-customGreen" : "text-customBrown"
+              } block w-40 bg-customLightGreen hover:bg-customGreen text-primarylight font-bold py-2 rounded-lg shadow-lg`
             }
             onClick={toggleMobileMenu}
           >

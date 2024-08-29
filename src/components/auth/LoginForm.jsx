@@ -64,23 +64,23 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="relative py-3 sm:max-w-xl sm:mx-auto"
+      className="relative sm:max-w-xl sm:mx-auto"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-green-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-customLightGreen to-veryLightGreen shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
       <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
         <div className="max-w-md mx-auto">
           <div>
-            <h1 className="text-2xl font-semibold">Login</h1>
+            <h1 className="text-2xl text-customGreen font-semibold">Login</h1>
           </div>
           <div className="divide-y divide-gray-200">
             <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-              <div className="relative">
+              <div className="relative py-2">
                 <input
                   autoComplete="off"
                   id="username"
                   name="username"
                   type="text"
-                  className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                  className="peer placeholder-transparent h-10 w-full my-1 p-2 rounded-lg shadow focus:outline-veryLightGreen text-gray-900"
                   placeholder="Username"
                   {...register("username", {
                     required: "username is required",
@@ -88,7 +88,7 @@ const LoginForm = () => {
                 />
                 <label
                   htmlFor="username"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                  className="absolute left-1 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                 >
                   Username
                 </label>
@@ -97,13 +97,13 @@ const LoginForm = () => {
                 <ErrorMessage message={errors.username.message} />
               )}
 
-              <div className="relative">
+              <div className="relative py-2">
                 <input
                   autoComplete="off"
                   id="password"
                   name="password"
                   type="password"
-                  className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                  className="peer placeholder-transparent h-10 w-full my-1 p-2 rounded-lg shadow focus:outline-veryLightGreen text-gray-900"
                   placeholder="Password"
                   {...register("password", {
                     required: "password is required",
@@ -111,7 +111,7 @@ const LoginForm = () => {
                 />
                 <label
                   htmlFor="password"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                  className="absolute left-1 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                 >
                   Password
                 </label>
@@ -131,7 +131,7 @@ const LoginForm = () => {
               <div className="relative">
                 <button
                   type="submit"
-                  className="bg-green-700 text-white rounded-md px-2 py-1 hover:bg-green-800 focus:bg-green-800 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  className="bg-customLightGreen hover:bg-customGreen text-primarylight py-2 px-3 rounded-lg shadow focus:bg-customGreen disabled:bg-secondary disabled:cursor-not-allowed"
                   disabled={loginPending || googlePending}
                 >
                   {loginPending || googlePending ? "Loading..." : "Login"}
