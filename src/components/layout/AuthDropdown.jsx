@@ -26,9 +26,11 @@ export default function AuthDropdown() {
             </NavLink>
           </MenuItem>
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-customLightGreen/10">
+            <NavLink
+              to="register"
+              className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-customLightGreen/10">
               Register
-            </button>
+            </NavLink>
           </MenuItem>
           {/* <div className="my-1 h-px bg-white/5" /> */}
         </MenuItems>

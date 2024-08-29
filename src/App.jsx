@@ -15,6 +15,7 @@ import Error403 from "./pages/errors/Error403";
 import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   console.log(import.meta.env.VITE_DB_PASSWORD);
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
               <Route path="/officers" element={<Officers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/teamPage" element={<Members />} />
