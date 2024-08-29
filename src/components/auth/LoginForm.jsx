@@ -3,12 +3,11 @@
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../ui/ErrorMessage";
 import { useMutation } from "@tanstack/react-query";
-import { login } from "../../api/auth";
-import { useAuth } from "../../context/AuthContext";
 import { AxiosError } from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { setBearerToken } from "../../config/axios";
+// import { useNavigate } from "react-router-dom";
+import GoogleButton from "../ui/GoogleButton";
+import { signInWithGoogle } from "../../api/auth";
 
 const LoginForm = () => {
   const {
@@ -16,11 +15,9 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { setIsAuthenticated } = useAuth();
   const [loginError, setLoginError] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { mutateAsync: loginMutation, isPending: loginPending } = useMutation({
     queryKey: ["login"],
@@ -29,22 +26,34 @@ const LoginForm = () => {
     },
   });
 
-  async function handleLogin(data) {
+  const { mutateAsync: googleLoginMutation, isPending: googlePending } =
+    useMutation({
+      queryKey: ["login"],
+      mutationFn: () => {
+        return handleGoogleLogin();
+      },
+    });
+
+  async function handleLogin() {
+    console.log("Login successful");
     try {
-      const response = await login(data);
-      setBearerToken(response.data.access);
-      localStorage.setItem("token", response.data.access);
-      setLoginSuccess("Welcome back!");
-      setIsAuthenticated(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 1000);
     } catch (error) {
-      console.log(error);
       if (error instanceof AxiosError) {
         return setLoginError(error.response.data.detail);
       }
       setLoginError("Invalid login credentials");
+    }
+  }
+
+  async function handleGoogleLogin() {
+    try {
+      const response = await signInWithGoogle();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -78,7 +87,7 @@ const LoginForm = () => {
                   })}
                 />
                 <label
-                  for="username"
+                  htmlFor="username"
                   className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                 >
                   Username
@@ -101,7 +110,7 @@ const LoginForm = () => {
                   })}
                 />
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                 >
                   Password
@@ -112,16 +121,20 @@ const LoginForm = () => {
               )}
 
               {loginError && <ErrorMessage message={loginError} />}
-              {loginSuccess && (
-                <div className="text-green-600">{loginSuccess}</div>
-              )}
+
+              <GoogleButton
+                type="button"
+                onClick={googleLoginMutation}
+                text="Login with Google"
+              />
+
               <div className="relative">
                 <button
                   type="submit"
                   className="bg-green-700 text-white rounded-md px-2 py-1 hover:bg-green-800 focus:bg-green-800 disabled:bg-gray-400 disabled:cursor-not-allowed"
-                  disabled={loginPending}
+                  disabled={loginPending || googlePending}
                 >
-                  {loginPending ? "Loading..." : "Login"}
+                  {loginPending || googlePending ? "Loading..." : "Login"}
                 </button>
               </div>
             </div>

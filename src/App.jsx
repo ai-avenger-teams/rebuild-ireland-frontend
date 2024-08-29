@@ -1,12 +1,11 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import Home from "./pages/Home";
 import Officers from "./pages/Officers";
 import Contact from "./pages/ContactPage";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 import FAQPage from "./pages/legal/FAQ";
 import ChatRoom from "./pages/ChatRoom";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -15,7 +14,6 @@ import Members from "./pages/TeamMemberPage";
 import Error403 from "./pages/errors/Error403";
 import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
-import PrivateRoute from "./routes/PrivateRoutes";
 import LoginPage from "./pages/LoginPage";
 
 function App() {

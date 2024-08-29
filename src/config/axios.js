@@ -5,11 +5,3 @@ export const axiosInstance = axios.create({
   baseURL: LOCAL_URL,
   headers: { "Content-Type": "application/json" },
 });
-
-export function setBearerToken(token) {
-  axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-}
-
-export function removeBearerToken() {
-  delete axiosInstance.defaults.headers.common["Authorization"];
-}
