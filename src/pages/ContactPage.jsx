@@ -1,9 +1,13 @@
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 
 function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleFormSubmit = (formData) => {
     console.log("Form submitted with data:", formData);
+    setIsSubmitted(true);
   };
 
   return (
@@ -36,6 +40,11 @@ function Contact() {
             </strong>
             !
           </p>
+          {isSubmitted && (
+            <div className="w-full max-w-xl mx-auto flex flex-col text-customLightGreen font-semibold bg-primarylight border border-veryLightGreen shadow rounded-lg p-4 my-4">
+              <p>Thank you for your message! We will get back to you as soon as possible.</p>
+            </div>
+          )}
         </div>
         <ContactForm onSubmit={handleFormSubmit} />
       </div>
