@@ -120,8 +120,6 @@ export const createUserDocumentFromGoogleAuth = async (userAuth) => {
 
   const userSnapShot = await getDoc(userDocRef);
 
-  console.log(userSnapShot);
-
   if (!userSnapShot.exists()) {
     const { email, displayName, name } = userAuth;
 

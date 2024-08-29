@@ -1,3 +1,32 @@
+/* https://cloud.google.com/dialogflow/cx/docs/concept/integration/dialogflow-messenger/css */
+
+:root {
+  --custom-green: #3b4a20
+  --custom-light-green: #4c602a;
+
+  --df-messenger-bot-message: #3773e5; /* Bot message background */
+  --df-messenger-user-message: #f4f4f4; /* User message background */
+  --df-messenger-font-color: #333333; /* Text color for messages */
+  --df-messenger-send-icon: #4c602a; /* Send icon color */
+
+  --df-messenger-button-titlebar-text-color: #ffffff; /* Title bar text color */
+  --df-messenger-chat-background-color: #f3f8ea; /* Chat window background */
+  --df-messenger-input-placeholder-color: #cccccc; /* Input placeholder text color */
+
+  --df-messenger-chat-window-height: 80vh; /* Chat window height */
+  --df-messenger-chat-window-width: 80vw; /* Chat window width */
+  --df-messenger-chat-bubble-border-radius: 50px; /* Chat bubble border radius */
+  --df-messenger-chat-window-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;/* Chat window box shadow */
+
+  --df-messenger-titlebar-background: #3b4a20; /* Title bar background */
+  --df-messenger-titlebar-border: black; /* Title bar border */
+
+  --df-messenger-chat-bubble-background: #3b4a20; /* Chat bubble background */  
+  --df-messenger-send-icon-color: #3b4a20; /* Send button icon colour */
+
+  --df-messenger-chat-border-radius: 10px; /* Border radius for the dialog */
+}
+
 #root {
   background-color: #faf8f6;
   margin: 0 auto;
@@ -81,3 +110,21 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+/* Chat messenger styling */
+
+/* df-messenger-chat-window-height {
+  height: 500px;
+}
+
+df-messenger-chat-window-width {
+  width: 350px;
+}
+
+df-messenger-chat-window-offset {
+  bottom: 0;
+}
+
+df-messenger-chat-window-box-shadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+} */

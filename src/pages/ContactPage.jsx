@@ -42,7 +42,10 @@ function Contact() {
           </p>
           {isSubmitted && (
             <div className="w-full max-w-xl mx-auto flex flex-col text-customLightGreen font-semibold bg-primarylight border border-veryLightGreen shadow rounded-lg p-4 my-4">
-              <p>Thank you for your message! We will get back to you as soon as possible.</p>
+              <p>
+                Thank you for your message! We will get back to you as soon as
+                possible.
+              </p>
             </div>
           )}
         </div>

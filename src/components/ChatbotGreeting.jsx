@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function ChatbotGreeting() {
   const [visible, setVisible] = useState(false);
@@ -21,7 +21,7 @@ function ChatbotGreeting() {
   return (
     <div
       className={`fixed right-4 top-24 bg-primarylight p-2 rounded-lg shadow-lg transition-opacity duration-500 ease-in-out ${
-        visible ? 'opacity-100' : 'opacity-0'
+        visible ? "opacity-100" : "opacity-0"
       }`}
       style={{ zIndex: 1000 }}
     >
