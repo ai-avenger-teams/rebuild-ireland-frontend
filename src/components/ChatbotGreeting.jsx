@@ -27,9 +27,9 @@ function ChatbotGreeting() {
     >
       <div className="flex items-center">
         <img
-          src="src/assets/buildie1.png"
+          src="src/assets/buildie2.png"
           alt="Chatbot Buildie"
-          className="w-10 h-10 mr-3 rounded-full"
+          className="w-12 h-12 mr-3 rounded-full"
         />
         <div>
           <p className="font-semibold text-customGreen">Hello, I’m Buildie!</p>
