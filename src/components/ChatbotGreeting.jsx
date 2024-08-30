@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function ChatbotGreeting() {
   const [visible, setVisible] = useState(false);
@@ -19,7 +20,8 @@ function ChatbotGreeting() {
   }, []);
 
   return (
-    <div
+    <NavLink
+      to="/ChatRoom"
       className={`fixed right-4 top-24 bg-primarylight p-2 rounded-lg shadow-lg transition-opacity duration-500 ease-in-out ${
         visible ? "opacity-100" : "opacity-0"
       }`}
@@ -36,7 +38,7 @@ function ChatbotGreeting() {
           <p>Here to help!</p>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 }
 
