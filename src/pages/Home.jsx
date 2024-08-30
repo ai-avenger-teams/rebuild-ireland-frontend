@@ -2,10 +2,11 @@ import { Helmet } from "react-helmet-async";
 import ChatbotGreeting from "../components/ChatbotGreeting";
 import { useEffect, useState } from "react";
 import { getAllUsers } from "../api/auth";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [prompts, setPrompts] = useState([]);
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function getAllUsersAndPrompts() {
@@ -52,13 +53,19 @@ function Home() {
 
         <p>
           With{" "}
-          <strong className="bg-blue-600 text-white py-1 px-2 border-black rounded-lg">
+          <NavLink
+            to="ChatRoom"
+            className="bg-blue-600 text-white py-1 px-2 border-black rounded-lg cursor-pointer hover:bg-blue-700"
+          >
             {users.length} active
-          </strong>
+          </NavLink>
           users and over
-          <strong className="bg-yellow-400 py-1 px-2 border-black rounded-lg">
+          <NavLink
+            to="ChatRoom"
+            className="bg-yellow-400  py-1 px-2 border-black rounded-lg cursor-pointer hover:bg-yellow-500"
+          >
             {prompts.length} active
-          </strong>
+          </NavLink>
           pieces of actionable advice given our buildie ai is here to help!{" "}
         </p>
         <div className="mx-2">
