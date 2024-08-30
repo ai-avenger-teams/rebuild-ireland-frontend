@@ -3,7 +3,6 @@ import ChatbotGreeting from "../components/ChatbotGreeting";
 import { useEffect } from "react";
 import { firebaseAuth, firebaseDB } from "../config/firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
-import UserPromptList from "../components/UserPromptList";
 
 // This is a simple component for rendering each chat bubble
 function ChatRoom() {
@@ -43,7 +42,7 @@ function ChatRoom() {
 
     return () => {
       window.removeEventListener("df-user-input-entered", handleUserInput);
-      window.addEventListener("df-response-received", handleReceivedMessage);
+      window.removeEventListener("df-response-received", handleReceivedMessage);
     };
   }, []);
 
@@ -61,7 +60,6 @@ function ChatRoom() {
         />
       </Helmet>
 
-      <UserPromptList />
       <section className="w-4/5 relative h-screen m-auto flex flex-col justify-between gap-y-8">
         <df-messenger
           oauth-client-id="1019667926235-4jj7aobdfbjmt0mgfjvl0mo1ckge425h.apps.googleusercontent.com"
@@ -73,14 +71,10 @@ function ChatRoom() {
         >
           <df-messenger-chat-bubble
             open
-            class="absolute bottom-20  right-0"
+            class="absolute bottom-20 right-0"
             chat-title="Rebuild Ireland"
           ></df-messenger-chat-bubble>
         </df-messenger>
-        <div>
-          {/* Pass the addMessageToLog function to ChatInputBox */}
-          {/* <ChatInputBox addMessage={addMessageToLog} /> */}
-        </div>
         <ChatbotGreeting />
       </section>
     </>

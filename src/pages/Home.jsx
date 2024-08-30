@@ -1,36 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import ChatbotGreeting from "../components/ChatbotGreeting";
-import { useEffect, useState } from "react";
-import { getAllUsers } from "../api/auth";
-import { NavLink } from "react-router-dom";
 
 function Home() {
-  const [prompts, setPrompts] = useState([]);
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    async function getAllUsersAndPrompts() {
-      try {
-        const allUsers = await getAllUsers();
-
-        // Sort users by the number of prompts they have
-        const sortedUsers = allUsers.sort(
-          (a, b) => b.promptHistory.length - a.promptHistory.length
-        );
-
-        const allPrompts = sortedUsers.flatMap((user) => user.promptHistory);
-
-        setPrompts(allPrompts);
-
-        setUsers(sortedUsers);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    }
-
-    getAllUsersAndPrompts();
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -51,23 +22,6 @@ function Home() {
           Welcome to ReBuild Ireland
         </h1>
 
-        <p>
-          With{" "}
-          <NavLink
-            to="ChatRoom"
-            className="bg-blue-600 text-white py-1 px-2 border-black rounded-lg cursor-pointer hover:bg-blue-700"
-          >
-            {users.length} active
-          </NavLink>
-          users and over
-          <NavLink
-            to="ChatRoom"
-            className="bg-yellow-400  py-1 px-2 border-black rounded-lg cursor-pointer hover:bg-yellow-500"
-          >
-            {prompts.length} active
-          </NavLink>
-          pieces of actionable advice given our buildie ai is here to help!{" "}
-        </p>
         <div className="mx-2">
           <div className="content-container rounded-lg overflow-hidden shadow-lg p-3 mt-5 mx-auto max-w-lg">
             <p className="text-lg text-start tracking-wide p-4">
