@@ -16,6 +16,7 @@ import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import History from "./pages/History";
 
 function App() {
   console.log(import.meta.env.VITE_DB_PASSWORD);
@@ -33,6 +34,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/teamPage" element={<Members />} />
               <Route path="/ChatRoom" element={<ChatRoom />} />
+              <Route path="/history" element={<History />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
               <Route path="/termsOfService" element={<TermsOfService />} />

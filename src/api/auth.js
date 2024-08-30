@@ -5,6 +5,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import {
+  addDoc,
   collection,
   doc,
   getDoc,
@@ -179,5 +180,27 @@ export const getAllUsers = async () => {
     return usersList;
   } catch (error) {
     console.error("Error getting users:", error);
+  }
+};
+
+export const saveMessageToResponses = async (message) => {
+  try {
+    const responsesCollectionRef = collection(firebaseDB, "responses");
+    const docRef = await addDoc(responsesCollectionRef, { message });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (error) {
+    console.error("Error adding message: ", error);
+  }
+};
+
+export const getAllPrompts = async () => {
+  try {
+    const responsesCollectionRef = collection(firebaseDB, "responses");
+    const querySnapshot = await getDocs(responsesCollectionRef);
+    const prompts = querySnapshot.docs.map((doc) => doc.data().message);
+    return prompts;
+  } catch (error) {
+    console.error("Error fetching prompts: ", error);
+    return [];
   }
 };
