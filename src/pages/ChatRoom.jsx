@@ -3,6 +3,7 @@ import ChatbotGreeting from "../components/ChatbotGreeting";
 import { useEffect } from "react";
 import { firebaseAuth, firebaseDB } from "../config/firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { saveMessageToResponses } from "../api/auth";
 
 // This is a simple component for rendering each chat bubble
 function ChatRoom() {
@@ -24,10 +25,11 @@ function ChatRoom() {
     }
   };
 
-  function handleReceivedMessage(event) {
+  async function handleReceivedMessage(event) {
     // When bot working add logic to store responses
 
-    console.log(event.detail.data.messages);
+    await saveMessageToResponses(event.detail.data.messages);
+
     event.detail.data.messages = event.detail.data.messages.filter(
       (message) => {
         return message.type === "text";
