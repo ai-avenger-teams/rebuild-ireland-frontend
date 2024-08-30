@@ -33,6 +33,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/teamPage" element={<Members />} />
               <Route path="/ChatRoom" element={<ChatRoom />} />
+              <Route path="/history" element={<History />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
               <Route path="/termsOfService" element={<TermsOfService />} />

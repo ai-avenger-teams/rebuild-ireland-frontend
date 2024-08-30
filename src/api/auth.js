@@ -192,3 +192,15 @@ export const saveMessageToResponses = async (message) => {
     console.error("Error adding message: ", error);
   }
 };
+
+export const getAllPrompts = async () => {
+  try {
+    const responsesCollectionRef = collection(firebaseDB, "responses");
+    const querySnapshot = await getDocs(responsesCollectionRef);
+    const prompts = querySnapshot.docs.map((doc) => doc.data().message);
+    return prompts;
+  } catch (error) {
+    console.error("Error fetching prompts: ", error);
+    return [];
+  }
+};
