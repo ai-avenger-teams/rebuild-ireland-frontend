@@ -52,7 +52,7 @@ const FAQPage = () => {
                     </p>
                     <div className="px-2">
                         {faqs.map((faq, index) => (
-                            <div key={index} className="w-full max-w-4xl mx-auto my-4 p-4 border rounded-lg shadow bg-primarylight text-start">
+                            <div key={index} className="w-full max-w-4xl mx-auto my-4 p-4 border rounded-lg shadow-lg bg-primarylight text-start">
                                 <h2 className="text-customGreen font-semibold text-lg pb-2">{faq.question}</h2>
                                 <p>{faq.answer}</p>
                             </div>

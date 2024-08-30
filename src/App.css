@@ -4,27 +4,43 @@
   --custom-green: #3b4a20;
   --custom-light-green: #4c602a;
 
-  --df-messenger-bot-message: #3773e5; /* Bot message background */
-  --df-messenger-user-message: #f4f4f4; /* User message background */
-  --df-messenger-font-color: #333333; /* Text color for messages */
-  --df-messenger-send-icon: #4c602a; /* Send icon color */
+  --df-messenger-bot-message: #3773e5;
+  /* Bot message background */
+  --df-messenger-user-message: #f4f4f4;
+  /* User message background */
+  --df-messenger-font-color: #333333;
+  /* Text color for messages */
+  --df-messenger-send-icon: #4c602a;
+  /* Send icon color */
 
-  --df-messenger-button-titlebar-text-color: #ffffff; /* Title bar text color */
-  --df-messenger-chat-background-color: #f3f8ea; /* Chat window background */
-  --df-messenger-input-placeholder-color: #cccccc; /* Input placeholder text color */
+  --df-messenger-button-titlebar-text-color: #ffffff;
+  /* Title bar text color */
+  --df-messenger-chat-background-color: #f3f8ea;
+  /* Chat window background */
+  --df-messenger-input-placeholder-color: #cccccc;
+  /* Input placeholder text color */
 
-  --df-messenger-chat-window-height: 80vh; /* Chat window height */
-  --df-messenger-chat-window-width: 80vw; /* Chat window width */
-  --df-messenger-chat-bubble-border-radius: 50px; /* Chat bubble border radius */
-  --df-messenger-chat-window-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;/* Chat window box shadow */
+  --df-messenger-chat-window-height: 80vh;
+  /* Chat window height */
+  --df-messenger-chat-window-width: 80vw;
+  /* Chat window width */
+  --df-messenger-chat-bubble-border-radius: 50px;
+  /* Chat bubble border radius */
+  --df-messenger-chat-window-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* Chat window box shadow */
 
-  --df-messenger-titlebar-background: #3b4a20; /* Title bar background */
-  --df-messenger-titlebar-border: black; /* Title bar border */
+  --df-messenger-titlebar-background: #3b4a20;
+  /* Title bar background */
+  --df-messenger-titlebar-border: black;
+  /* Title bar border */
 
-  --df-messenger-chat-bubble-background: #3b4a20; /* Chat bubble background */  
-  --df-messenger-send-icon-color: #3b4a20; /* Send button icon colour */
+  --df-messenger-chat-bubble-background: #3b4a20;
+  /* Chat bubble background */
+  --df-messenger-send-icon-color: #3b4a20;
+  /* Send button icon colour */
 
-  --df-messenger-chat-border-radius: 10px; /* Border radius for the dialog */
+  --df-messenger-chat-border-radius: 10px;
+  /* Border radius for the dialog */
 }
 
 #root {
@@ -60,7 +76,7 @@ body {
 .page-container {
   position: relative;
   min-height: 100vh;
-  background-image: url('/src/assets/house3.jpg');
+  background-image: url('/house3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,20 +96,29 @@ body {
 
 .vision-container,
 .mission-container {
-  width: 48%; /* Side-by-side placement */
+  width: 48%;
+  /* Side-by-side placement */
+}
+
+strong {
+  color: #3b4a20;
+}
+
+ul {
+  text-align: left;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .vision-mission-section {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .vision-container,
   .mission-container {
-      width: 100%;
-      margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 

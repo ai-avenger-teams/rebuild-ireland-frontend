@@ -18,15 +18,11 @@ function ChatRoom() {
     }
   };
 
-<<<<<<< HEAD
-  function handleReceivedMessage(event) {
-=======
   async function handleReceivedMessage(event) {
     // When bot working add logic to store responses
 
     await saveMessageToResponses(event.detail.data.messages);
 
->>>>>>> 58eaa3201d87eebe014fd304f513c13aac25cab9
     event.detail.data.messages = event.detail.data.messages.filter(
       (message) => message.type === "text"
     );
