@@ -5,35 +5,35 @@ import TeamMemberCard from '../components/TeamMemberCard';
 const members = [
     {
         name: 'Viola Bergere',
-        photo: 'src/assets/viola.JPEG',
+        photo: '/viola.JPEG',
         description: 'Frontend Developer, UX/UI Designer, Idea Creator',
         github: 'https://github.com/violaberg',
         linkedin: 'https://www.linkedin.com/in/viola-bergere-5a668699/'
     },
     {
         name: 'Stephen Dawson',
-        photo: 'src/assets/stephen.jpg',
+        photo: '/stephen.jpg',
         description: 'Backend Developer, AI Product Developer',
         github: 'https://github.com/stephendawsondev',
         linkedin: 'https://linkedin.com/in/johndoe'
     },
     {
         name: 'Charles J. Fowler',
-        photo: 'src/assets/cj.png',
+        photo: '/cj.png',
         description: 'AI Product Developer, Team Project Coordinator, DevOps & Cloud',
         github: 'https://github.com/iPoetDev',
         linkedin: 'https://www.linkedin.com/in/charlesjfowler/'
     },
     {
         name: 'Darrach Barneveld',
-        photo: 'src/assets/darrach.jpg',
+        photo: '/darrach.jpg',
         description: 'Full Stack Developer, Frontend Team Lead',
         github: 'https://github.com/DarrachBarneveld',
         linkedin: 'https://www.linkedin.com/in/darrach-barneveld-2b493511b/'
     },
     {
         name: 'Jhoan Trujillo',
-        photo: 'src/assets/jhoan.png',
+        photo: '/jhoan.png',
         description: 'Full Stack Developer, AI Product Developer',
         github: 'https://github.com/jhoanTrujillo',
         linkedin: 'https://www.linkedin.com/in/jhoan-trujillo-92b03517b/'
