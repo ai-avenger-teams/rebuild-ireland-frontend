@@ -64,7 +64,7 @@ function ChatRoom() {
       <UserPromptList />
       <section className="w-4/5 relative h-screen m-auto flex flex-col justify-between gap-y-8">
         <df-messenger
-          // oauth-client-id="INSERT_OAUTH_CLIENT_ID"
+          oauth-client-id="1019667926235-4jj7aobdfbjmt0mgfjvl0mo1ckge425h.apps.googleusercontent.com"
           location="eu"
           project-id="national-ai-rebuild-ireland"
           agent-id="db35d0a4-b15d-4349-a972-2095c66f446d"
