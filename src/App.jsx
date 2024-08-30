@@ -16,6 +16,7 @@ import Error404 from "./pages/errors/Error404";
 import Error500 from "./pages/errors/Error500";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import History from "./pages/History";
 
 function App() {
   console.log(import.meta.env.VITE_DB_PASSWORD);
