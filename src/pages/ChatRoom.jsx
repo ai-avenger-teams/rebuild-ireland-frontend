@@ -75,7 +75,7 @@ function ChatRoom() {
         >
           <df-messenger-chat-bubble
             expanded="true"
-            class="absolute bottom-20 right-0"
+            class="absolute bottom-20 right-0 "
             chat-title="Rebuild Ireland"
           ></df-messenger-chat-bubble>
         </df-messenger>

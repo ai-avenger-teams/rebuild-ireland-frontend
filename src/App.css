@@ -21,7 +21,7 @@
   --df-messenger-titlebar-background: #3b4a20; /* Title bar background */
   --df-messenger-titlebar-border: black; /* Title bar border */
 
-  --df-messenger-chat-bubble-background: #3b4a20; /* Chat bubble background */  
+  --df-messenger-chat-bubble-background: rgba(255,255,255, 0); /* Chat bubble background */  
   --df-messenger-send-icon-color: #3b4a20; /* Send button icon colour */
 
   --df-messenger-chat-border-radius: 10px; /* Border radius for the dialog */

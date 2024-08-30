@@ -30,7 +30,7 @@ const History = () => {
             className="p-4 border flex gap-2 item-center rounded-lg shadow-md bg-white"
           >
             <FaQuestion className="text-blue-500 h-10 w-10" />
-            <p className="text-lg  text-gray-800">{item.text}</p>
+            <p className="text-lg  text-gray-800">{item?.text}</p>
           </li>
         ))}
       </ul>
