@@ -26,6 +26,8 @@ function ChatRoom() {
 
   function handleReceivedMessage(event) {
     // When bot working add logic to store responses
+
+    console.log(event.detail.data.messages);
     event.detail.data.messages = event.detail.data.messages.filter(
       (message) => {
         return message.type === "text";
