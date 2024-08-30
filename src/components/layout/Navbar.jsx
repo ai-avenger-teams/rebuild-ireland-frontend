@@ -76,7 +76,7 @@ function Navbar() {
               } hover:text-customLightGreen pt-2`
             }
           >
-            Prompts
+            Buildies
           </NavLink>
           <AuthDropdown />
         </div>
