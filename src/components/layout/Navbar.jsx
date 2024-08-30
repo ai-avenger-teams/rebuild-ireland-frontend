@@ -17,7 +17,7 @@ function Navbar() {
         {/* Logo and Company Name */}
         <Link to="/" className="flex items-center">
           <img
-            src="../src/assets/logoBrown.png"
+            src="/logoBrown.png"
             alt="ReBuild Ireland Logo"
             className="h-8 w-auto mr-2"
           />
