@@ -1,10 +1,10 @@
 /* https://cloud.google.com/dialogflow/cx/docs/concept/integration/dialogflow-messenger/css */
 
 :root {
-  --custom-green: #3b4a20
+  --custom-green: #3b4a20;
   --custom-light-green: #4c602a;
 
-  --df-messenger-bot-message: #3773e5; /* Bot message background */
+  --df-messenger-bot-message: #c9cfbf; /* Bot message background */
   --df-messenger-user-message: #f4f4f4; /* User message background */
   --df-messenger-font-color: #333333; /* Text color for messages */
   --df-messenger-send-icon: #4c602a; /* Send icon color */
@@ -19,7 +19,7 @@
   --df-messenger-chat-window-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;/* Chat window box shadow */
 
   --df-messenger-titlebar-background: #3b4a20; /* Title bar background */
-  --df-messenger-titlebar-border: black; /* Title bar border */
+  --df-messenger-titlebar-border: #353024; /* Title bar border */
 
   --df-messenger-chat-bubble-background: rgba(255,255,255, 0); /* Chat bubble background */  
   --df-messenger-send-icon-color: #3b4a20; /* Send button icon colour */
