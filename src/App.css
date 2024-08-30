@@ -1,7 +1,7 @@
 /* https://cloud.google.com/dialogflow/cx/docs/concept/integration/dialogflow-messenger/css */
 
 :root {
-  --custom-green: #3b4a20
+  --custom-green: #3b4a20;
   --custom-light-green: #4c602a;
 
   --df-messenger-bot-message: #3773e5; /* Bot message background */
